@@ -1,7 +1,7 @@
+
 let posts = [];
 
 const likedPostsId = [];
-// console.log(likedPostsId);
 const reportedPostsId = [];
 
 const getLikedPosts = () => {
@@ -17,7 +17,6 @@ const isLiked = (id) => {
 };
 
 const addToLiked = (id) => {
-  // console.log(id);
   // likedPostsId.plus(id); [1. BUG is here]
   likedPostsId.push(id);
   showPosts(posts);
@@ -30,8 +29,7 @@ const reportPost = (id) => {
 };
 
 const displayContent = (text) => {
-  // console.log(text);
-  // 3. BUG is Here : 'text' is in string
+  // 3. BUG is Here : 'text' was in string
   return text.length < 30 ? text : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
 };
 
@@ -40,6 +38,14 @@ const switchTab = (id) => {
     document.getElementById("posts").style.display = "grid";
     document.getElementById("liked").style.display = "none";
     document.getElementById("reported").style.display = "none";
+
+    // empty report page [5. BUG fixing]
+    const ReportPage = document.getElementById('reported');
+    ReportPage.textContent = '';
+
+    // empty liked page [6. BUG is here]
+    const emptyLiked = document.getElementById('liked');
+    emptyLiked.textContent = '';
   }
   else if (id === "liked") {
     document.getElementById("liked").style.display = "block";
@@ -57,9 +63,7 @@ const switchTab = (id) => {
 };
 
 const createPost = (post) => {
-  // console.log(post);
-  // console.log(post.id);
-  // console.log(post.comments);
+
   // console.log(post.comments[0]); 4. BUG is here. forgot to set index 0
   // 2. BUG is here [profile picture image is updated]
   const image = post.image;
@@ -143,7 +147,6 @@ const createPost = (post) => {
 };
 
 const showPosts = (posts) => {
-  // console.log(posts);
   const productsContainer = document.getElementById("posts");
   productsContainer.innerHTML = "";
 
@@ -163,7 +166,8 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
   const reportedPosts = getReportedPosts();
-  posts.forEach((post) => {
+  // posts.forEach((post) => { 5. BUG is here
+  reportedPosts.forEach((post) => {
     const div = createPost(post);
     document.getElementById("reported").appendChild(div);
   });
@@ -176,3 +180,4 @@ const loadPosts = async () => {
 }
 
 loadPosts();
+
