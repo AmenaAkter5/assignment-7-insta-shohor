@@ -30,7 +30,9 @@ const reportPost = (id) => {
 };
 
 const displayContent = (text) => {
-  return text.length < 30 ? 'text' : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
+  // console.log(text);
+  // 3. BUG is Here
+  return text.length < 30 ? text : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
 };
 
 const switchTab = (id) => {
