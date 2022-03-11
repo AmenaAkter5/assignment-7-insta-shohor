@@ -29,7 +29,7 @@ const reportPost = (id) => {
 };
 
 const displayContent = (text) => {
-  // 3. BUG is Here : 'text' was in string
+  // 3. BUG is Here : 'text' is in string
   return text.length < 30 ? text : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
 };
 

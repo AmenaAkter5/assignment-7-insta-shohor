@@ -62,9 +62,99 @@
             <h1>Reported posts</h1>
         </div>
     </main>
+
+    <!-- Concepts Section -->
+
+    <section class="container">
+        <h1 class="text-center my-5">JavaScript Concepts</h1>
+        <article>
+            <h4 class="my-4 text-primary fw-bold">How does JavaScript work?</h4>
+            <div class="row row-cols-lg-2 row-cols-1">
+                <div class="col mx-auto">
+                    <p>JavaScript is a single threaded, interpreted, lightweight and the world most popular programming
+                        language. It can only
+                        handle one operation at a time, or one line of code at a time. It's an interpreted programming
+                        language
+                        that, like most scripting languages, makes use of dynamic typing, which verifies type safety
+                        during
+                        runtime.
+                    </p>
+                    <p>
+                        JavaScript has no compilation step. It works with own JIT compiler in every web browsers. JIT is
+                        abbreviated form of Just In Time.
+                        Basically in JavaScript JIT is such a process where engine convert JavaScript code to machine
+                        code
+                        (bytecode). So that machine easily understand JavaScript Code and he can deliver more faster
+                        output to
+                        the user. Like, the Google Chrome browser uses a JIT engine called V8 for converting JavaScript
+                        code to
+                        bytecode.
+                    </p>
+                </div>
+                <div class="col">
+                    <img src="images/JS.png" alt="">
+                </div>
+            </div>
+        </article>
+        <div class="my-5">
+            <h4 class="my-5 text-primary fw-bold">LocalStorage <span class="text-danger">Vs</span> sessionStorage</h4>
+            <div class="mx-auto">
+                <p>
+                    We have a number of options for caching or storing information on the client browser.
+                    <b>localStorage</b>
+                    and
+                    <b>sessionStorage</b> are two ways of them.
+                </p>
+                <p>
+                    From the name localStorage and sessionStorage we can understand that they store somethings to
+                    use them
+                    in near future. Yes, browser stores data on client's computer by localStorage and sessionStorage
+                    to get
+                    user informations and use them to operate different operations in near future.
+                </p>
+                <p>
+                    Data storing
+                    format is
+                    same in localStorage and sessionStorage.
+                    They store the data as key/value pairs in a web browser.
+                </p>
+            </div>
+            <div>
+                <p class="mt-5 mb-4">Although they are same in format but there are differences between localStorage and
+                    sessionStorage in
+                    their
+                    persistency and usages.</p>
+
+                <!-- Table -->
+                <table class="table table-striped table-hover">
+                    <tbody>
+                        <tr class="text-center">
+                            <th>LocalStorage</th>
+                            <th>SessionStorage</th>
+                        </tr>
+                        <tr>
+                            <td>LocalStorage lasts until the user deletes it.</td>
+                            <td>SessionStorage get cleared when the page or tab is closed.</td>
+                        </tr>
+                        <tr>
+                            <td>Data in localStorage has no expiration date.</td>
+                            <td>Data in sessionStorage is temporay.</td>
+                        </tr>
+                        <tr>
+                            <td>Changes are saved and available for all current and future visits to the site.</td>
+                            <td>For sessionStorage, changes made are saved and
+                                available for the current <br> page in that tab until it is closed.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
     <footer></footer>
 
-    <!-- add javascript  file  -->
+    <!-- External javascript  file  -->
     <script src="./js/app.js"></script>
 </body>
 
